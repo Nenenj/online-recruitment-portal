@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Apply for {{ job.title }}</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.applicant_name.label }}<br>
+            {{ form.applicant_name(size=32) }}<br>
+            {{ form.applicant_name.errors }}
+        </div>
+        <div>
+            {{ form.applicant_email.label }}<br>
+            {{ form.applicant_email(size=32) }}<br>
+            {{ form.applicant_email.errors }}
+        </div>
+        <div>
+            {{ form.resume.label }}<br>
+            {{ form.resume(rows=4) }}<br>
+            {{ form.resume.errors }}
+        </div>
+        <div>
+            {{ form.cover_letter.label }}<br>
+            {{ form.cover_letter(rows=4) }}<br>
+            {{ form.cover_letter.errors }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}

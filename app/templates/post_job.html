@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Post a Job</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}<br>
+            {{ form.title.errors }}
+        </div>
+        <div>
+            {{ form.description.label }}<br>
+            {{ form.description(rows=4) }}<br>
+            {{ form.description.errors }}
+        </div>
+        <div>
+            {{ form.location.label }}<br>
+            {{ form.location(size=32) }}<br>
+            {{ form.location.errors }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
