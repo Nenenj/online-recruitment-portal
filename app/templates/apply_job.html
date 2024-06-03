@@ -1,30 +1,37 @@
-{% extends "base.html" %}
-{% block content %}
-    <h1>Apply for {{ job.title }}</h1>
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <div>
-            {{ form.applicant_name.label }}<br>
-            {{ form.applicant_name(size=32) }}<br>
-            {{ form.applicant_name.errors }}
-        </div>
-        <div>
-            {{ form.applicant_email.label }}<br>
-            {{ form.applicant_email(size=32) }}<br>
-            {{ form.applicant_email.errors }}
-        </div>
-        <div>
-            {{ form.resume.label }}<br>
-            {{ form.resume(rows=4) }}<br>
-            {{ form.resume.errors }}
-        </div>
-        <div>
-            {{ form.cover_letter.label }}<br>
-            {{ form.cover_letter(rows=4) }}<br>
-            {{ form.cover_letter.errors }}
-        </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-    </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Apply for Job</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('apply_job', job_id=job.id) }}" method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="resume">Resume:</label>
+            <input type="file" id="resume" name="resume" required><br><br>
+            <input type="submit" value="Apply">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Nenenj. All rights reserved.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

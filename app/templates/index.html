@@ -1,10 +1,40 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Job Listings</h1>
-<ul>
-    {% for job in jobs %}
-        <li><a href="{{ url_for('job_details', job_id=job.id) }}">{{ job.title }}</a> - {{ job.location }}</li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Job Listings</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <a href="{{ url_for('job_details', job_id=job.id) }}">{{ job.title }}</a> - {{ job.location }}
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Nenenj. All rights reserved.</p>
+    </footer>
+    
+    <!-- Include any JavaScript files here -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

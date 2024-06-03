@@ -22,9 +22,7 @@ def create_app():
             'SECRET_KEY', 'default_secret_key'
             )
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-            'DATABASE_URI',
-            'mysql+pymysql://hbnb_dev:hbnb_dev_pwd@mynenenj.tech/'
-            'Recruitment_portal'
+            'DATABASE_URI', 'sqlite:///default.db'
             )
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

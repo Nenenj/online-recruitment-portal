@@ -1,25 +1,32 @@
-{% extends "base.html" %}
-{% block content %}
-    <h1>Post a Job</h1>
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <div>
-            {{ form.title.label }}<br>
-            {{ form.title(size=32) }}<br>
-            {{ form.title.errors }}
-        </div>
-        <div>
-            {{ form.description.label }}<br>
-            {{ form.description(rows=4) }}<br>
-            {{ form.description.errors }}
-        </div>
-        <div>
-            {{ form.location.label }}<br>
-            {{ form.location(size=32) }}<br>
-            {{ form.location.errors }}
-        </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-    </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Post a Job</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('post_job') }}" method="post">
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br><br>
+            <input type="submit" value="Post Job">
+        </form>
+    </main>
+    <footer
