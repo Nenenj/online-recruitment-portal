@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_sqlalchemy import SQLAlchemy
-from app import db
+from app import db, bcrypt
 from app.forms import LoginForm, RegistrationForm, JobForm, ApplicationForm
 from app.models import User, JobListing
 from flask_login import (
@@ -10,7 +10,7 @@ from flask_login import (
         logout_user, login_required
         )
 from werkzeug.security import generate_password_hash, check_password_hash
-import bcrypt
+
 
 
 def init_routes(app):
