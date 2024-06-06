@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Online Recruitment Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Job Listings</h1>
-        
-        <nav>
+        <h1>Online Recruitment Portal</h1>
+        <nav class="navbar">
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('apply_job') }}">Apply for a Job</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
+    <section class="description">
+        <h2>About Our Portal</h2>
+        <p>Welcome to the Online Recruitment Portal. Our platform aims to connect employers with potential candidates efficiently and seamlessly. Employers can post job openings, and job seekers can browse available positions, apply for jobs, and manage their applications all in one place. Join us in making recruitment easier and more accessible.</p>
+    </section>
+    <section class="job-listings">
+        <h2>Job Listings</h2>
         <ul>
             {% for job in jobs %}
                 <li>
@@ -28,13 +32,10 @@
                 </li>
             {% endfor %}
         </ul>
-    </main>
-    
+    </section>
     <footer>
         <p>&copy; 2024 Nenenj. All rights reserved.</p>
     </footer>
-    
-    <!-- Include any JavaScript files here -->
-    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/scripts.js') }}"></script>
 </body>
 </html>

@@ -7,36 +7,76 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    color: white;
+    padding: 1rem 0;
     text-align: center;
 }
 
-nav ul {
-    list-style-type: none;
+.navbar {
+    background-color: #444;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-nav ul li {
+.navbar li {
     display: inline;
-    margin-right: 10px;
 }
 
-nav ul li a {
-    color: #fff;
+.navbar a {
+    display: inline-block;
+    padding: 1rem;
+    color: white;
     text-decoration: none;
 }
 
-main {
+.navbar a:hover {
+    background-color: #555;
+}
+
+.description {
     padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.job-listings {
+    padding: 20px;
+    text-align: center;
+}
+
+.job-listings ul {
+    list-style: none;
+    padding: 0;
+}
+
+.job-listings li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    background-color: #333;
+    color: white;
     position: fixed;
     width: 100%;
     bottom: 0;

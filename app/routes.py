@@ -76,19 +76,6 @@ def init_routes(app):
         job = JobListing.query.get_or_404(job_id)
         return render_template('job_details.html', job=job)
 
-    @app.route('/apply-job/<int:job_id>', methods=['GET', 'POST'])
-    def apply_job(job_id):
-        form = ApplicationForm()
-        job = JobListing.query.get_or_404(job_id)
-        if form.validate_on_submit():
-            application = JobApplication(
-                    job_id=job.id,
-                    applicant_name=form.applicant_name.data,
-                    applicant_email=form.applicant_email.data,
-                    resume=form.resume.data,
-                    cover_letter=form.cover_letter.data)
-            db.session.add(application)
-            db.session.commit()
-            flash('Your application has been submitted.')
-            return redirect(url_for('index'))
-        return render_template('apply_job.html', form=form, job=job)
+    @app.route('/apply-job')
+    def apply_job():
+        return render_template('apply_job.html')
