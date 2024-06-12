@@ -15,20 +15,24 @@
                 <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
-                <li><a href="{{ url_for('apply_job') }}">Apply for a Job</a></li>
+                <li><a href="#">Apply for a Job(Coming Soon)</a></li>
             </ul>
         </nav>
     </header>
     <section class="description">
         <h2>About Our Portal</h2>
+	<img src="static/images/recruitment_portal_image.jpeg" alt="recruitment-Image" class="recruit-image">
         <p>Welcome to the Online Recruitment Portal. Our platform aims to connect employers with potential candidates efficiently and seamlessly. Employers can post job openings, and job seekers can browse available positions, apply for jobs, and manage their applications all in one place. Join us in making recruitment easier and more accessible.</p>
     </section>
     <section class="job-listings">
         <h2>Job Listings</h2>
-        <ul>
+         <ul>
             {% for job in jobs %}
                 <li>
-                    <a href="{{ url_for('job_details', job_id=job.id) }}">{{ job.title }}</a> - {{ job.location }}
+                    <h3>{{ job.title }}</h3>
+                    <p><strong>Company:</strong> {{ job.user.company_name }}</p>
+                    <p><strong>Location:</strong> {{ job.location }}</p>
+                    <p><strong>Description:</strong> {{ job.description }}</p>
                 </li>
             {% endfor %}
         </ul>

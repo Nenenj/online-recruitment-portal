@@ -76,6 +76,16 @@ def init_routes(app):
         job = JobListing.query.get_or_404(job_id)
         return render_template('job_details.html', job=job)
 
-    @app.route('/apply-job')
+    @app.route('/apply-job/>', methods=['GET', 'POST'])
     def apply_job():
-        return render_template('apply_job.html')
+        # Fetch the job details using job_id from the database
+        job = JobListing.query.get_or_404(job_id)
+        if request.method == 'POST':
+            # Handle form submission
+            name = request.form['name']
+            email = request.form['email']
+            resume = request.files['resume']
+            # Save application logic here
+            flash('Application submitted successfully!', 'success')
+            return redirect(url_for('index'))
+        return render_template('apply_job.html', job=job)

@@ -2,18 +2,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e3f2fd; /* Light blue background */
 }
 
 header {
-    background-color: #333;
+    background-color: #0d47a1; /* Dark blue */
     color: white;
     padding: 1rem 0;
     text-align: center;
 }
 
 .navbar {
-    background-color: #444;
+    background-color: #1976d2; /* Bright blue */
     overflow: hidden;
 }
 
@@ -36,48 +36,68 @@ header {
 }
 
 .navbar a:hover {
-    background-color: #555;
+    background-color: #42a5f5; /* Light blue on hover */
 }
 
 .description {
     padding: 20px;
+    color: black;
+    font-size: 1.1rem;
     text-align: center;
-    background-color: #fff;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.job-listings {
+main {
     padding: 20px;
-    text-align: center;
 }
 
-.job-listings ul {
-    list-style: none;
-    padding: 0;
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-.job-listings li {
-    background-color: #fff;
-    margin: 10px 0;
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="submit"] {
+    background-color: #1976d2; /* Bright blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+    background-color: #42a5f5; /* Light blue on hover */
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
+    background-color: #0d47a1; 
     color: white;
+    text-align: center;
+    padding: 10px 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
+.recruit-image {
+    width: 400px;
+    height: auto;

@@ -15,11 +15,12 @@
                 <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
-		<li><a href="{{ url_for('apply_job') }}">Apply for a Job</a></li>
+		<li><a href="#">Apply for a Job (Coming Soon)</a></li>
             </ul>
         </nav>
     </header>
     <main>
+	    
         <form action="{{ url_for('post_job') }}" method="post">
             <label for="title">Job Title:</label>
             <input type="text" id="title" name="title" required><br><br>
@@ -29,5 +30,6 @@
             <textarea id="description" name="description" required></textarea><br><br>
             <input type="submit" value="Post Job">
         </form>
+	    
     </main>
     <footer

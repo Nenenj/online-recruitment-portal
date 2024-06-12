@@ -15,6 +15,7 @@
                 <li><a href="{{ url_for('post_job') }}">Post a Job</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
+		<li><a href="#">Apply a Job (Coming Soon)</a><li>
             </ul>
         </nav>
     </header>
@@ -22,7 +23,7 @@
         <h2>{{ job.title }}</h2>
         <p><strong>Location:</strong> {{ job.location }}</p>
         <p><strong>Description:</strong> {{ job.description }}</p>
-        <a href="{{ url_for('apply_job', job_id=job.id) }}">Apply for this job</a>
+        <a href="#">Apply for this job (Coming Soon)</a>
     </main>
     <footer>
         <p>&copy; 2024 Your Nenenj. All rights reserved.</p>
